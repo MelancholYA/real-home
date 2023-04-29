@@ -7,9 +7,10 @@ type Props = {};
 type linksType = {
   nav: { path: string; name: string }[];
   social: { path: string; icon: string }[];
+  footer: { title: string; links: { path: string; name: string }[] }[];
 };
 
-const links: linksType = {
+export const links: linksType = {
   nav: [
     {
       path: "/",
@@ -45,6 +46,58 @@ const links: linksType = {
       icon: "cib-pinterest-p",
     },
   ],
+  footer: [
+    {
+      title: "Navigation",
+      links: [
+        {
+          path: "/",
+          name: "Home",
+        },
+        {
+          path: "/",
+          name: "About Us",
+        },
+        {
+          path: "/",
+          name: "Property",
+        },
+        {
+          path: "/",
+          name: "Gallery",
+        },
+        {
+          path: "/",
+          name: "Our Blog",
+        },
+        {
+          path: "/",
+          name: "Contacts",
+        },
+      ],
+    },
+    {
+      title: "For clients",
+      links: [
+        {
+          name: "Sign in",
+          path: "/",
+        },
+        {
+          name: "Forum",
+          path: "/",
+        },
+        {
+          name: "Promotions",
+          path: "/",
+        },
+        {
+          name: "News",
+          path: "/",
+        },
+      ],
+    },
+  ],
 };
 
 const NavLinks = (props: Props) => {
@@ -74,7 +127,7 @@ const NavLinks = (props: Props) => {
             <li key={"navlink-" + i} className="mr-2">
               <Link
                 href={link.path}
-                className="text-accent transition-all md:mx-2 md:text-dark md:hover:text-accent"
+                className="grid aspect-square place-items-center rounded-full border-[0.5px] border-none p-2 text-accent shadow-lg transition-all md:mx-2 md:border-grey md:text-dark md:shadow-[gainsboro] md:hover:text-accent md:hover:shadow-accent"
               >
                 <i className={link.icon}></i>
               </Link>
