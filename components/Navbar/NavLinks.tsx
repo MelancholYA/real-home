@@ -57,9 +57,11 @@ const NavLinks = (props: Props) => {
           {links.nav.map((link, i) => (
             <li
               key={"navlink-" + i}
-              className={`relative my-4 p-2 md:border-b-2  md:transition-colors md:${
-                path === link.path ? "border-accent" : "border-light"
-              } md:hover:border-dark`}
+              className={`relative my-4 p-2 md:transition-colors${
+                path === link.path
+                  ? " md:border-b-2 md:border-b-accent"
+                  : " md:border-b-2 md:border-b-light"
+              } md:hover:border-b-dark`}
             >
               <Link href={link.path}>{link.name}</Link>
             </li>
@@ -69,7 +71,7 @@ const NavLinks = (props: Props) => {
       <div>
         <ul className="flex h-[50px] items-center justify-around bg-dark p-4 md:bg-light">
           {links.social.map((link, i) => (
-            <li key={"navlink-" + i} className="mr-2 ">
+            <li key={"navlink-" + i} className="mr-2">
               <Link
                 href={link.path}
                 className="text-accent transition-all md:mx-2 md:text-dark md:hover:text-accent"
