@@ -9,8 +9,8 @@ type Props = {};
 
 const index = (props: Props) => {
   return (
-    <footer className="bg-dark text-center text-grey">
-      <ul className="p-4 text-center">
+    <footer className="bg-dark p-2 text-center text-grey md:flex md:items-start md:justify-around md:p-8 md:text-left">
+      <ul className="pb-4 text-center ">
         <li>
           <Image
             src={logoDark}
@@ -23,7 +23,7 @@ const index = (props: Props) => {
         <li>
           <ul className="m-auto flex h-[50px] w-[140px] items-center justify-between ">
             {links.social.map((link, i) => (
-              <li key={"navlink-" + i} className="mr-2">
+              <li key={"navlink-" + i}>
                 <Link
                   href={link.path}
                   className="grid aspect-square  place-items-center 
@@ -40,7 +40,7 @@ const index = (props: Props) => {
       {links.footer.map((category, i) => (
         <ul key={`category-id-${i}`} className="pb-3">
           <li>
-            <h3 className="text-xl font-semibold md:text-2xl md:font-bold">
+            <h3 className="mb-2 text-2xl font-light md:text-3xl ">
               {category.title}
             </h3>{" "}
           </li>
@@ -53,6 +53,37 @@ const index = (props: Props) => {
           ))}
         </ul>
       ))}
+      <ul>
+        <li>
+          <h3 className="mb-2 text-2xl font-light md:text-3xl">Contact us</h3>{" "}
+        </li>
+        <li className="text-sm font-light">
+          <p>240 Central Park, London OR 10019</p>
+        </li>
+        <li>
+          <Link className="text-sm font-light" href="tel:+18005596580">
+            Freephone: +1 800 559 6580
+          </Link>
+        </li>
+        <li>
+          <Link className="text-sm font-light" href="tel:+19596036035">
+            Telephone: +1 959 603 6035
+          </Link>
+        </li>
+        <li>
+          <Link className="text-sm font-light" href="tel:+18005596580">
+            FAX: +1 800 559 6580
+          </Link>
+        </li>
+        <li className="mt-2">
+          <Link
+            className="mt-2 text-sm font-light text-accent "
+            href="mailto:info@realhome.com"
+          >
+            info@realhome.com
+          </Link>
+        </li>
+      </ul>
     </footer>
   );
 };
