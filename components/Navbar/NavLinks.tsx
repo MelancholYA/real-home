@@ -7,9 +7,10 @@ type Props = {};
 type linksType = {
   nav: { path: string; name: string }[];
   social: { path: string; icon: string }[];
+  footer: { title: string; links: { path: string; name: string }[] }[];
 };
 
-const links: linksType = {
+export const links: linksType = {
   nav: [
     {
       path: "/",
@@ -45,6 +46,58 @@ const links: linksType = {
       icon: "cib-pinterest-p",
     },
   ],
+  footer: [
+    {
+      title: "Navigation",
+      links: [
+        {
+          path: "/",
+          name: "Home",
+        },
+        {
+          path: "/",
+          name: "About Us",
+        },
+        {
+          path: "/",
+          name: "Property",
+        },
+        {
+          path: "/",
+          name: "Gallery",
+        },
+        {
+          path: "/",
+          name: "Our Blog",
+        },
+        {
+          path: "/",
+          name: "Contacts",
+        },
+      ],
+    },
+    {
+      title: "For clients",
+      links: [
+        {
+          name: "Sign in",
+          path: "/",
+        },
+        {
+          name: "Forum",
+          path: "/",
+        },
+        {
+          name: "Promotions",
+          path: "/",
+        },
+        {
+          name: "News",
+          path: "/",
+        },
+      ],
+    },
+  ],
 };
 
 const NavLinks = (props: Props) => {
@@ -57,9 +110,11 @@ const NavLinks = (props: Props) => {
           {links.nav.map((link, i) => (
             <li
               key={"navlink-" + i}
-              className={`relative my-4 p-2 md:border-b-2  md:transition-colors md:${
-                path === link.path ? "border-accent" : "border-light"
-              } md:hover:border-dark`}
+              className={`relative my-4 p-2 md:transition-colors${
+                path === link.path
+                  ? " md:border-b-2 md:border-b-accent"
+                  : " md:border-b-2 md:border-b-light"
+              } md:hover:border-b-dark`}
             >
               <Link href={link.path}>{link.name}</Link>
             </li>
@@ -69,10 +124,10 @@ const NavLinks = (props: Props) => {
       <div>
         <ul className="flex h-[50px] items-center justify-around bg-dark p-4 md:bg-light">
           {links.social.map((link, i) => (
-            <li key={"navlink-" + i} className="mr-2 ">
+            <li key={"navlink-" + i} className="mr-2">
               <Link
                 href={link.path}
-                className="text-accent transition-all md:mx-2 md:text-dark md:hover:text-accent"
+                className="grid aspect-square place-items-center rounded-full border-[0.5px] border-none p-2 text-accent shadow-lg transition-all md:mx-2 md:border-grey md:text-dark md:shadow-[gainsboro] md:hover:text-accent md:hover:shadow-accent"
               >
                 <i className={link.icon}></i>
               </Link>
