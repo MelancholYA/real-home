@@ -25,3 +25,34 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.dots {
+  width: fit-content;
+  margin: auto;
+  display: flex !important;
+  transform: translateY(-200%);
+}
+.dots li {
+  position: relative;
+  display: block;
+  margin-inline: 5px;
+  border: 1px solid white;
+  border-radius: 100vw;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+}
+.dots li button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  opacity: 0;
+}
+.dots .slick-active {
+  background-color: white;
+}
