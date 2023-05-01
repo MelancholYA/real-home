@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "./Slider";
 import Image from "next/image";
 import HomeHero from "./HomeHero";
+import NoData from "./NoData";
 
 type Props = {};
 
@@ -27,14 +28,16 @@ const getData: () => Promise<data[]> = async () => {
     {
       id: "1",
       address: "120 Anastasia Avenue, Coral Gables",
-      price: 120000,
-      image: "https://source.unsplash.com/random/?building",
+      price: 200000,
+      image:
+        "https://images.unsplash.com/photo-1631049552057-403cdb8f0658?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     },
     {
       id: "2",
       address: "120 Anastasia Avenue, Coral Gables",
       price: 120000,
-      image: "https://source.unsplash.com/random/?hotel",
+      image:
+        "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     },
   ];
 };
@@ -44,11 +47,15 @@ const Carousel = async (props: Props) => {
   console.log(data);
   return (
     <div>
-      <Slider>
-        {data.map((item) => (
-          <HomeHero data={item} key={`slide-item-${item.id}`} />
-        ))}
-      </Slider>
+      {!data.length ? (
+        <NoData />
+      ) : (
+        <Slider>
+          {data.map((item) => (
+            <HomeHero data={item} key={`slide-item-${item.id}`} />
+          ))}
+        </Slider>
+      )}
     </div>
   );
 };

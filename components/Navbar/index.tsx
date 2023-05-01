@@ -17,7 +17,7 @@ const Index = (props: Props) => {
   }, [path]);
 
   return (
-    <header className="sticky top-0 flex h-16 items-center justify-between bg-light px-4  py-2 text-dark lg:px-8 ">
+    <header className="sticky top-0 z-50 flex h-16 items-center justify-between bg-light px-4  py-2 text-dark lg:px-8 ">
       <Image alt="logo" src={logo} />
       <button
         className={`navToggle ${isOpen ? "openedNavToggle" : ""} md:hidden`}

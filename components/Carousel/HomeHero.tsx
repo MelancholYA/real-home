@@ -26,7 +26,7 @@ const HomeHero = ({ data }: Props) => {
           {address}
         </h3>
         <div className="mt-6 w-1/3 items-center text-center md:flex md:justify-center ">
-          <h5 className="md:mr-7 md:text-5xl md:font-thin">${price}</h5>
+          <h5 className="md:mr-7 md:text-4xl md:font-thin">${price}</h5>
           <Link
             className="mt-4 block  rounded-md  bg-[#ffffff47] p-1 transition-colors hover:bg-[#ffffff8a] md:mt-0 md:text-lg "
             href={`product/${id}`}
