@@ -1,0 +1,47 @@
+$dark: #303030;
+$grey: #f6f6f6;
+$light: #ffffff;
+$accent: #e2574c;
+
+.navToggle {
+  position: relative;
+  height: 32px;
+  width: 32px;
+  span {
+    position: absolute;
+    background-color: $dark;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 32px;
+    border-radius: 100vw;
+    transition: 0.3s;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 0;
+      height: inherit;
+      width: inherit;
+      background-color: inherit;
+      border-radius: inherit;
+      transition: 0.3s;
+    }
+    &::after {
+      top: 8px;
+    }
+  }
+}
+
+.openedNavToggle {
+  span {
+    transform: translateY(-50%) rotate(45deg);
+    &::after,
+    &::before {
+      top: 0;
+      transform: rotate(90deg);
+    }
+  }
+}
